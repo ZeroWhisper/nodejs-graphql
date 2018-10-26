@@ -12,7 +12,15 @@ routes.get('/', (req, res, next) => {
  */
 routes.get('/auth/signup', authController.signup);
 routes.get('/auth/signin', authController.signin);
-routes.get('/auth/register', authController.register);
+routes.post('/auth/register', authController.register);
 routes.post('/auth/authenticate', authController.authenticate);
+
+/**
+ * Dashboard
+ */
+routes.get('/app/dashboard', (req, res, next) => {
+  res.send('Olá!');
+});
+
 
 module.exports = routes;
