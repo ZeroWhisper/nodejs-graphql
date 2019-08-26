@@ -1,0 +1,8 @@
+/*
+ * Fonte: https://medium.com/@pativancarrasco/why-your-es6-syntax-doesnt-work-in-node-js-and-how-to-fix-it-161f0708f1ad
+ */
+
+// in .babelrc
+{
+  "presets": ["@babel/preset-env"]
+}

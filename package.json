@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-base",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ZeroWhisper/nodejs-base-new-project.git",
+  "author": "Marcos <marcos.devel@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.0",
+    "apollo-server-express": "^2.9.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "graphql": "^14.5.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "nodemon": "^1.19.1"
+  }
+}
