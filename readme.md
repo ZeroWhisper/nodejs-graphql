@@ -11,9 +11,16 @@ Crie a pasta e inicie o projeto
 ```sh
 yarn add express
 
+yarn add sequelize
+
+yarn add pg pg-hstore
+
 yarn add apollo-server apollo-server-express graphql
+
 yarn add cors
 ```
+
+======
 
 # OTHERS!!!
 
@@ -23,10 +30,16 @@ yarn add cors
  - https://www.apollographql.com/docs/apollo-server/essentials/server/
 
 
-### Main packages
+### Main Packages
 
 yarn add apollo-server apollo-server-express
 yarn add express graphql
 yarn add cors
 
+### Aux Packages
+
+```sh
 yarn add -D @babel/core @babel/cli @babel/preset-env @babel/node
+
+yarn add -D sequelize-cli
+```
