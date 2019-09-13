@@ -1,34 +1,81 @@
 import cors from "cors";
 import express from "express";
 import { ApolloServer, gql } from "apollo-server-express";
+import { buildSchema } from "graphql";
 
 const app = express();
-
 // app.use(cors);
 
-const schema = gql`
+// const books = [
+//   {
+//     title: "Harry Potter and the Chamber of Secrets",
+//     author: "J.K. Rowling"
+//   },
+//   {
+//     title: "Jurassic Park",
+//     author: "Michael Crichton"
+//   }
+// ];
+
+// const typeDefs = gql`
+//   type Book {
+//     title: String
+//     author: Author
+//   }
+
+//   type Author {
+//     books: [Book]
+//   }
+
+//   type Query {
+//     author: Author
+//   }
+// `;
+
+// const resolvers = {
+//   Query: {
+//     author(parent, args, context, info) {
+//       return [books[0]];
+//     }
+//   },
+//   Author: {
+//     books(author) {
+//       return [books[0]];
+//     }
+//   }
+// };
+
+// Construct a schema, using GraphQL schema language
+const typeDefs = gql`
   type Query {
-    me: User
+    getBooks: [Book]
+    getAuthors: [Author]
   }
-  type User {
-    username: String!
+  type Book {
+    title: String
+    author: Author
+  }
+
+  type Author {
+    name: String
+    books: [Book]
+  }
+  type Mutation {
+    addBook(title: String, author: String): Book
   }
 `;
 
+// Provide resolver functions for your schema fields
 const resolvers = {
   Query: {
-    me: () => {
-      return {
-        username: "Robin Wieruch"
-      };
-    }
+    hello: () => "Hello world!"
+  },
+  User: {
+    users: () => ({ name: "TESTE", email: "email" })
   }
 };
 
-const server = new ApolloServer({
-  typeDefs: schema,
-  resolvers
-});
+const server = new ApolloServer({ typeDefs, resolvers });
 
 server.applyMiddleware({ app, path: "/graphql" });
 
