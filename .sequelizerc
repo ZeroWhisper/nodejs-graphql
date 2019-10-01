@@ -1,8 +1,9 @@
-import { resolve } from 'path';
+// Must be in CommonJS
+const { resolve } = require('path');
 
-export default {
-  config: resolve(__dirname, 'src', 'config'),
-  'models-path': resolve(__dirname, 'src', 'config'),
-  'migrations-path': resolve(__dirname, 'src', 'config'),
-  'seeders-path': resolve(__dirname, 'src', 'config')
+module.exports = {
+  config: resolve(__dirname, 'src', 'config', 'index.js'),
+  'models-path': resolve(__dirname, 'src', 'app', 'models'),
+  'migrations-path': resolve(__dirname, 'src', 'database', 'migrations'),
+  'seeders-path': resolve(__dirname, 'src', 'database', 'seeds')
 };

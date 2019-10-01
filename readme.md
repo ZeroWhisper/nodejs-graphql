@@ -58,7 +58,8 @@ yarn add -D sequelize-cli
 # Cria novo model (This can be overwritten later with --f flag.)
  - O comando gera tanto o model quanto o migration
  - Font: https://sequelize.org/master/manual/migrations.html
-`yarn sequelize model:create --name Student --attributes firstName:string,email:string`
+`yarn sequelize model:create --name student --attributes firstName:string,email:string`
+`yarn sequelize model:create --name user --attributes name:string,email:string,password_hash:string`
 
 Obs: Note que não há espaço entre os parametros depois de `--attributes`
 

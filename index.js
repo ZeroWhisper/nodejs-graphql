@@ -3,6 +3,8 @@ import express from 'express';
 // import { ApolloServer, gql } from 'apollo-server-express';
 // import { buildSchema } from 'graphql';
 
+import userControllers from '~/app/controllers/userControllers';
+
 const app = express();
 // app.use(cors);
 
