@@ -1,5 +1,5 @@
 // Must be in CommonJS
-const fs = require('fs');
+// const fs = require('fs');
 
 const database_url =
   'postgres://cyqnmoyh:JMviPTBSLknl0IxNXMaAenkyzA9knVxO@motty.db.elephantsql.com:5432/cyqnmoyh';

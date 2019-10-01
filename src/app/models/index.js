@@ -24,6 +24,9 @@ Object.keys(db).forEach(name => {
   }
 });
 
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
 module.exports = db;
 
 // console.log('SAIDA', db);
