@@ -7,61 +7,52 @@ const generators = require('require-dir')(null, {
   }
 });
 
-const { url } = require('../../config');
+const { url, options } = require('../../config');
 
-const sequelize = new Sequelize(url, { dialect: 'postgres' });
+const sequelize = new Sequelize(url, options);
 
 const db = {};
+
+const relations = {
+  venda: [
+    {
+      relation: 'belongsTo',
+      table: 'user',
+      options: {}
+    },
+    {
+      relation: 'belongsTo',
+      table: 'produto',
+      options: {}
+    }
+  ]
+};
 
 Object.keys(generators).forEach(name => {
   const model = generators[name](sequelize, Sequelize.DataTypes);
   db[name] = model;
 });
 
+// Object.keys(db).forEach(name => {
+//   // If you have configured on own model
+//   if (db[name].associate) {
+//     db[name].associate(db);
+//   }
+// });
+
 Object.keys(db).forEach(name => {
-  if (db[name].associate) {
-    db[name].associate(db);
-  }
+  const model = db[name];
+  Object.keys(relations).forEach(rel => {
+    if (name === rel) {
+      relations[rel].forEach(item => {
+        const { relation, table, options } = item;
+        model[relation](db[table], options || {});
+      });
+    }
+  });
 });
 
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 module.exports = db;
-
-// console.log('SAIDA', db);
-
-// console.log(teste);
-
-// const fs = require('fs');
-// const path = require('path');
-// const Sequelize = require('sequelize');
-// const basename = path.basename(__filename);
-// const config = require('../../config/index.js');
-
-// const db = {};
-// const sequelize = new Sequelize(config);
-
-// console.log('TO NO INDEX DO MODEL');
-
-// fs.readdirSync(__dirname)
-//   .filter(file => {
-//     return (
-//       file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
-//     );
-//   })
-//   .forEach(file => {
-//     const model = sequelize.import(path.join(__dirname, file));
-//     db[model.name] = model;
-//   });
-
-// Object.keys(db).forEach(modelName => {
-//   if (db[modelName].associate) {
-//     db[modelName].associate(db);
-//   }
-// });
-
-// db.sequelize = sequelize;
-// db.Sequelize = Sequelize;
-
-// module.exports = db;

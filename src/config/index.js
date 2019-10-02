@@ -39,8 +39,18 @@ const database = {
   }
 };
 
+const options = {
+  dialect: 'postgres'
+  // define: {
+  //   timestamps: true,
+  //   underscored: true,
+  //   underscoredAll: true
+  // }
+};
+
 // Must be in CommonJS
 module.exports = {
-  ...database.development,
-  url: database_url
+  // ...database.development,
+  url: database_url,
+  options
 };

@@ -6,8 +6,8 @@
   "author": "Marcos <marcos.devel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node index.js",
-    "st": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node src/index.js",
+    "st": "nodemon --exec babel-node src/index.js"
   },
   "dependencies": {
     "apollo-server": "^2.9.0",
