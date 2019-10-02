@@ -43,10 +43,6 @@ yarn add -D sequelize-cli
 
 ### Comandos Sequelize
 
-## Aux
-
-`https://github.com/sequelize/sequelize-auto`
-
 ## Database
 
 # Se você não tem a database ainda (Cria com base na configuração de conexão)
