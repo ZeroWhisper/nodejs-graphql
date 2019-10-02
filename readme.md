@@ -7,8 +7,8 @@ readme: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 - https://www.robinwieruch.de/graphql-apollo-server-tutorial (excellent)
 - https://www.apollographql.com/docs/apollo-server/essentials/server/
 - https://teamtreehouse.com/library/install-and-use-sequelize-cli
-- Sobre associate: https://codeburst.io/sequelize-migrations-setting-up-associations-985d29b61ee7
-- Engenharia Reversa (Not tested yet) https://www.npmjs.com/package/sequelize-auto-v2
+- Associate: https://codeburst.io/sequelize-migrations-setting-up-associations-985d29b61ee7
+- From database (Not tested yet) https://www.npmjs.com/package/sequelize-auto-v2
 - With already exists models https://stackoverflow.com/questions/27835801/how-to-auto-generate-migrations-with-sequelize-cli-from-sequelize-models
 - https://medium.com/@rogeriothe_48115/relacionamentos-com-sequelize-guia-final-2b3baf21b2a1
 -
